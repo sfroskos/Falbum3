@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aHI-V2-Cay">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="kR8-Td-YJP">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="aHI-V2-Cay" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0sS-ER-e2e">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uOW-Hk-sDH" kind="relationship" relationship="rootViewController" id="hSl-lm-0wA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iNX-5K-RsB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-465" y="109"/>
+        </scene>
+        <!--Collection View Controller - Trucks-->
+        <scene sceneID="qZE-v0-AMX">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="uOW-Hk-sDH" customClass="CollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="c4b-zg-xGO">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KKS-Wm-Thc">
+                            <size key="itemSize" width="150" height="150"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" reuseIdentifier="MY_CELL" id="HJ8-dh-hyc" customClass="Cell">
+                                <rect key="frame" x="5" y="5" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Et-HN-EYy"/>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="4Et-HN-EYy" firstAttribute="bottom" secondItem="HJ8-dh-hyc" secondAttribute="bottom" type="default" id="4R6-BG-yD5"/>
+                                    <constraint firstItem="4Et-HN-EYy" firstAttribute="trailing" secondItem="HJ8-dh-hyc" secondAttribute="trailing" type="default" id="COF-cy-0SX"/>
+                                    <constraint firstItem="4Et-HN-EYy" firstAttribute="leading" secondItem="HJ8-dh-hyc" secondAttribute="leading" type="default" id="ntL-ja-8aD"/>
+                                    <constraint firstItem="4Et-HN-EYy" firstAttribute="top" secondItem="HJ8-dh-hyc" secondAttribute="top" type="default" id="t9Z-YS-Gl4"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="4Et-HN-EYy" id="V4h-8h-9cp"/>
+                                    <segue destination="X2S-oa-YZT" kind="push" id="hwZ-1d-hGr"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="uOW-Hk-sDH" id="GMp-WL-TQ3"/>
+                            <outlet property="delegate" destination="uOW-Hk-sDH" id="lvI-AE-zwn"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Trucks" id="lBb-Av-Krs"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e2X-6b-OQL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="109"/>
+        </scene>
+        <!--Image Detail View Controller-->
+        <scene sceneID="4rb-MQ-zU7">
+            <objects>
+                <viewController id="X2S-oa-YZT" customClass="ImageDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Ko-5E-U2O">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vft-WF-ui8">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="0OI-zI-6ni"/>
+                                    <constraint firstAttribute="height" constant="300" id="5Lx-0D-rG6"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgS-bp-rUt">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vft-WF-ui8" firstAttribute="top" secondItem="7Ko-5E-U2O" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Orw-Ma-MLz"/>
+                            <constraint firstItem="pgS-bp-rUt" firstAttribute="centerX" secondItem="7Ko-5E-U2O" secondAttribute="centerX" type="default" id="dUa-MM-G6s"/>
+                            <constraint firstItem="pgS-bp-rUt" firstAttribute="centerX" secondItem="Vft-WF-ui8" secondAttribute="centerX" type="default" id="kST-I6-20n"/>
+                            <constraint firstItem="pgS-bp-rUt" firstAttribute="top" secondItem="Vft-WF-ui8" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="wU1-Td-3By"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LEv-8K-oIu"/>
+                    <connections>
+                        <outlet property="truckDetailLabel" destination="pgS-bp-rUt" id="bin-rR-Oqu"/>
+                        <outlet property="truckImageView" destination="Vft-WF-ui8" id="pdx-6W-20c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qOq-2X-5j5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="456" y="109"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

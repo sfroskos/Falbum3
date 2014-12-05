@@ -10,8 +10,8 @@
 
 @interface CollectionViewController : UICollectionViewController <UICollectionViewDataSource>
 
-@property (strong, nonatomic) NSArray *truckImages;
-@property (strong,nonatomic) NSArray *truckDescriptions;
+@property (strong, nonatomic) NSArray *photoImages;
+@property (strong,nonatomic) NSArray *photoDescriptions;
 @property (strong,nonatomic) NSArray *falbumImages;
 
 @end

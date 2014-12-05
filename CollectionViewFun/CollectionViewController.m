@@ -22,15 +22,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.truckImages = @[@"silverFord",@"orangeFord",@"yellowFord",@"greenFord"];
+//    self.photoImages = @[@"silverFord",@"orangeFord",@"yellowFord",@"greenFord"];
     
-    self.truckDescriptions = @[@"50's Silver Ford", @"50's Orange Ford", @"70's Yellow Ford",@"50's Green Ford" ];
+    self.photoDescriptions = @[@"50's Silver Ford", @"50's Orange Ford", @"70's Yellow Ford",@"50's Green Ford" ];
+    //Get photos for display
     PhotoAlbum *photoalbum = [[PhotoAlbum alloc]init];
-    [photoalbum grabAllMediaCompletion:^(NSArray *allMediaAssetsArray, NSArray *allMediaImagesArray)
-    {
-        self.falbumImages = allMediaImagesArray;
-        NSLog(@"grabAllMediaCompletionBlock");
-    }];
+//    [photoalbum grabAllMediaCompletion:^(NSArray *allMediaAssetsArray, NSArray *allMediaImagesArray)
+//    {
+//        self.falbumImages = allMediaImagesArray;
+//        NSLog(@"grabAllMediaCompletionBlock");
+//    }];
+    self.falbumImages = [photoalbum getPhotos];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,7 +46,7 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     
-    return [self.truckImages count];
+    return [self.falbumImages count];
     
 }
 
@@ -53,9 +55,10 @@
 {
     Cell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MY_CELL" forIndexPath:indexPath];
     //cell.imageView.image = [UIImage imageNamed:self.truckImages[0]];
-    UIImage *truckImage = [[UIImage alloc] init];
-    truckImage = [UIImage imageNamed:[self.truckImages objectAtIndex:indexPath.row]];
-    cell.imageView.image = truckImage;
+    UIImage *photoImage = [[UIImage alloc] init];
+//    truckImage = [UIImage imageNamed:[self.falbumImages objectAtIndex:indexPath.row]];
+    photoImage = [self.falbumImages objectAtIndex:indexPath.row];
+    cell.imageView.image = photoImage;
     return cell;
 }
 
@@ -66,7 +69,7 @@
     NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
  
     ImageDetailViewController *imageDetailViewController = (ImageDetailViewController *)segue.destinationViewController;
-    imageDetailViewController.truckImage = [UIImage imageNamed:[self.truckImages objectAtIndex:indexPath.row]];
-    imageDetailViewController.truckLabelText = [self.truckDescriptions objectAtIndex:indexPath.row];
+    imageDetailViewController.photoImage = [self.falbumImages objectAtIndex:indexPath.row];
+    imageDetailViewController.photoLabelText = [self.photoDescriptions objectAtIndex:indexPath.row];
 }
 @end

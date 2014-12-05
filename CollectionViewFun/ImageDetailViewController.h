@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *truckImageView;
 @property (strong, nonatomic) IBOutlet UILabel *truckDetailLabel;
-@property (strong, nonatomic) UIImage *truckImage;
-@property (strong, nonatomic) NSString *truckLabelText;
+@property (strong, nonatomic) UIImage *photoImage;
+@property (strong, nonatomic) NSString *photoLabelText;
 
 @end

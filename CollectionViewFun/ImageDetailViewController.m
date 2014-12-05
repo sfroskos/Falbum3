@@ -28,8 +28,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.truckImageView.image = self.truckImage;
-    self.truckDetailLabel.text = self.truckLabelText;
+    self.truckImageView.image = self.photoImage;
+    self.truckDetailLabel.text = self.photoLabelText;
 
 }
 

@@ -10,36 +10,6 @@
 
 @implementation PhotoAlbum
 
-//- (void)grabAllMediaCompletion:(void (^)(NSArray *, NSArray *))completion
-//{
-//    PHFetchOptions *options = [[PHFetchOptions alloc] init];
-//    options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
-//
-//    NSMutableArray *allMediaAssetsArray = [NSMutableArray new];
-//    NSMutableArray *allMediaImagesArray = [NSMutableArray new];
-//
-//    PHFetchResult *fr = [PHAsset fetchAssetsWithOptions:options];
-//    NSArray* assetsArray = [fr objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, fr.count)]];
-//
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,0),^{
-//        if (fr.count>0) {
-//            for (int idx=0; idx<fr.count; idx++) {
-//                PHAsset *asset = fr[idx];
-//                if (asset) {
-//                    UIImage *assetImage = [self grabImageFromAsset:asset];
-//                    if (assetImage != nil) {
-//                        [allMediaAssetsArray addObject:asset];
-//                        [allMediaImagesArray addObject:assetImage];
-//                   }
-//              }
-//            }
-//            if (completion) completion(allMediaAssetsArray, allMediaImagesArray);
-//        } else {
-//            if (completion) completion(nil, nil);
-//        }
-//    });
-//}
-
 // Get photos from library
 - (NSArray *)getPhotos
 {
@@ -47,11 +17,8 @@
     NSDateFormatter *tempFormatter = [[NSDateFormatter alloc]init];
     [tempFormatter setDateFormat:@"yyyy-MM-dd"];
     NSDate *startdate = [tempFormatter dateFromString:@"2014-12-02"];
-    //NSComparisonResult result = [now compare:mile];
     PHFetchOptions *options = [[PHFetchOptions alloc] init];
     options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
-    //options.predicate = [NSPredicate predicateWithFormat:@"%@ <= creationdate <= %@",albumcriteria[@"Start Date"],albumcriteria[@"End Date"]];
-//    options.predicate = [NSPredicate predicateWithFormat:@"creationDate BETWEEN %@", [NSArray arrayWithObjects:startdate, now, nil]];
     options.predicate = [NSPredicate predicateWithFormat:@"creationDate > %@ AND creationDate < %@",startdate,enddate];
     PHFetchResult *fr = [PHAsset fetchAssetsWithOptions:options];
     NSArray* assetsArray = [fr objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, fr.count)]];

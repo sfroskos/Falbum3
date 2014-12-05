@@ -21,7 +21,7 @@
             </objects>
             <point key="canvasLocation" x="-465" y="109"/>
         </scene>
-        <!--Trucks-->
+        <!--Falbum-->
         <scene sceneID="qZE-v0-AMX">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="uOW-Hk-sDH" customClass="CollectionViewController" sceneMemberID="viewController">
@@ -66,7 +66,7 @@
                             <outlet property="delegate" destination="uOW-Hk-sDH" id="lvI-AE-zwn"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Trucks" id="lBb-Av-Krs"/>
+                    <navigationItem key="navigationItem" title="Falbum" id="lBb-Av-Krs"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2X-6b-OQL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

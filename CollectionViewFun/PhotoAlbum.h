@@ -13,5 +13,5 @@
 @interface PhotoAlbum : NSObject
 - (UIImage *)grabImageFromAsset:(PHAsset *)asset;
 - (NSArray *)getPhotos;
-- (void)grabAllMediaCompletion:(void (^)(NSArray *, NSArray *))completion;
+//- (void)grabAllMediaCompletion:(void (^)(NSArray *, NSArray *))completion;
 @end

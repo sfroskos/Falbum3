@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:CollectionViewFun.xcodeproj">
+      location = "self:Falbum3.xcodeproj">
    </FileRef>
 </Workspace>

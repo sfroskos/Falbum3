@@ -30,14 +30,14 @@
 /* Begin PBXFileReference section */
 		5D4912F21A313E9000FAA80C /* PhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAlbum.h; sourceTree = "<group>"; };
 		5D4912F31A313E9000FAA80C /* PhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAlbum.m; sourceTree = "<group>"; };
-		88768BBF16D5169200A72EFC /* CollectionViewFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88768BBF16D5169200A72EFC /* Falbum3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Falbum3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88768BC316D5169200A72EFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88768BC516D5169200A72EFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		88768BC716D5169200A72EFC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		88768BCB16D5169200A72EFC /* CollectionViewFun-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CollectionViewFun-Info.plist"; sourceTree = "<group>"; };
+		88768BCB16D5169200A72EFC /* Falbum3-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Falbum3-Info.plist"; sourceTree = "<group>"; };
 		88768BCD16D5169200A72EFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		88768BCF16D5169200A72EFC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		88768BD116D5169200A72EFC /* CollectionViewFun-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CollectionViewFun-Prefix.pch"; sourceTree = "<group>"; };
+		88768BD116D5169200A72EFC /* Falbum3-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Falbum3-Prefix.pch"; sourceTree = "<group>"; };
 		88768BD216D5169200A72EFC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		88768BD316D5169200A72EFC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		88768BD516D5169200A72EFC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		88768BC016D5169200A72EFC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				88768BBF16D5169200A72EFC /* CollectionViewFun.app */,
+				88768BBF16D5169200A72EFC /* Falbum3.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,10 +120,10 @@
 		88768BCA16D5169200A72EFC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				88768BCB16D5169200A72EFC /* CollectionViewFun-Info.plist */,
+				88768BCB16D5169200A72EFC /* Falbum3-Info.plist */,
 				88768BCC16D5169200A72EFC /* InfoPlist.strings */,
 				88768BCF16D5169200A72EFC /* main.m */,
-				88768BD116D5169200A72EFC /* CollectionViewFun-Prefix.pch */,
+				88768BD116D5169200A72EFC /* Falbum3-Prefix.pch */,
 				88768BD516D5169200A72EFC /* Default.png */,
 				88768BD716D5169200A72EFC /* Default@2x.png */,
 				88768BD916D5169200A72EFC /* Default-568h@2x.png */,
@@ -145,9 +145,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		88768BBE16D5169200A72EFC /* CollectionViewFun */ = {
+		88768BBE16D5169200A72EFC /* Falbum3 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88768BE316D5169200A72EFC /* Build configuration list for PBXNativeTarget "CollectionViewFun" */;
+			buildConfigurationList = 88768BE316D5169200A72EFC /* Build configuration list for PBXNativeTarget "Falbum3" */;
 			buildPhases = (
 				88768BBB16D5169200A72EFC /* Sources */,
 				88768BBC16D5169200A72EFC /* Frameworks */,
@@ -157,9 +157,9 @@
 			);
 			dependencies = (
 			);
-			name = CollectionViewFun;
+			name = Falbum3;
 			productName = CollectionViewFun;
-			productReference = 88768BBF16D5169200A72EFC /* CollectionViewFun.app */;
+			productReference = 88768BBF16D5169200A72EFC /* Falbum3.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -171,7 +171,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Joe Hoffman";
 			};
-			buildConfigurationList = 88768BB916D5169200A72EFC /* Build configuration list for PBXProject "CollectionViewFun" */;
+			buildConfigurationList = 88768BB916D5169200A72EFC /* Build configuration list for PBXProject "Falbum3" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -183,7 +183,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				88768BBE16D5169200A72EFC /* CollectionViewFun */,
+				88768BBE16D5169200A72EFC /* Falbum3 */,
 			);
 		};
 /* End PBXProject section */
@@ -298,9 +298,9 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CollectionViewFun/CollectionViewFun-Prefix.pch";
-				INFOPLIST_FILE = "CollectionViewFun/CollectionViewFun-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "CollectionViewFun/Falbum3-Prefix.pch";
+				INFOPLIST_FILE = "CollectionViewFun/Falbum3-Info.plist";
+				PRODUCT_NAME = Falbum3;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -310,9 +310,9 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CollectionViewFun/CollectionViewFun-Prefix.pch";
-				INFOPLIST_FILE = "CollectionViewFun/CollectionViewFun-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "CollectionViewFun/Falbum3-Prefix.pch";
+				INFOPLIST_FILE = "CollectionViewFun/Falbum3-Info.plist";
+				PRODUCT_NAME = Falbum3;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -320,7 +320,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		88768BB916D5169200A72EFC /* Build configuration list for PBXProject "CollectionViewFun" */ = {
+		88768BB916D5169200A72EFC /* Build configuration list for PBXProject "Falbum3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				88768BE116D5169200A72EFC /* Debug */,
@@ -329,7 +329,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88768BE316D5169200A72EFC /* Build configuration list for PBXNativeTarget "CollectionViewFun" */ = {
+		88768BE316D5169200A72EFC /* Build configuration list for PBXNativeTarget "Falbum3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				88768BE416D5169200A72EFC /* Debug */,

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D4912F41A313E9000FAA80C /* PhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4912F31A313E9000FAA80C /* PhotoAlbum.m */; };
 		88768BC416D5169200A72EFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88768BC316D5169200A72EFC /* UIKit.framework */; };
 		88768BC616D5169200A72EFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88768BC516D5169200A72EFC /* Foundation.framework */; };
 		88768BC816D5169200A72EFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88768BC716D5169200A72EFC /* CoreGraphics.framework */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D4912F21A313E9000FAA80C /* PhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAlbum.h; sourceTree = "<group>"; };
+		5D4912F31A313E9000FAA80C /* PhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAlbum.m; sourceTree = "<group>"; };
 		88768BBF16D5169200A72EFC /* CollectionViewFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88768BC316D5169200A72EFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88768BC516D5169200A72EFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -97,6 +100,8 @@
 		88768BC916D5169200A72EFC /* CollectionViewFun */ = {
 			isa = PBXGroup;
 			children = (
+				5D4912F21A313E9000FAA80C /* PhotoAlbum.h */,
+				5D4912F31A313E9000FAA80C /* PhotoAlbum.m */,
 				88768BD216D5169200A72EFC /* AppDelegate.h */,
 				88768BD316D5169200A72EFC /* AppDelegate.m */,
 				88768BDB16D5169200A72EFC /* MainStoryboard.storyboard */,
@@ -209,6 +214,7 @@
 			files = (
 				88768BD016D5169200A72EFC /* main.m in Sources */,
 				88768BD416D5169200A72EFC /* AppDelegate.m in Sources */,
+				5D4912F41A313E9000FAA80C /* PhotoAlbum.m in Sources */,
 				88768BE016D5169200A72EFC /* CollectionViewController.m in Sources */,
 				88768BF016D969C000A72EFC /* Cell.m in Sources */,
 				8880E80B16D99789009E841A /* ImageDetailViewController.m in Sources */,
@@ -290,6 +296,7 @@
 		88768BE416D5169200A72EFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CollectionViewFun/CollectionViewFun-Prefix.pch";
 				INFOPLIST_FILE = "CollectionViewFun/CollectionViewFun-Info.plist";
@@ -301,6 +308,7 @@
 		88768BE516D5169200A72EFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CollectionViewFun/CollectionViewFun-Prefix.pch";
 				INFOPLIST_FILE = "CollectionViewFun/CollectionViewFun-Info.plist";

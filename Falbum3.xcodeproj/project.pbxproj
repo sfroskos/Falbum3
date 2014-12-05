@@ -73,7 +73,7 @@
 		88768BB416D5169200A72EFC = {
 			isa = PBXGroup;
 			children = (
-				88768BC916D5169200A72EFC /* CollectionViewFun */,
+				88768BC916D5169200A72EFC /* Falbum3 */,
 				88768BC216D5169200A72EFC /* Frameworks */,
 				88768BC016D5169200A72EFC /* Products */,
 			);
@@ -97,7 +97,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		88768BC916D5169200A72EFC /* CollectionViewFun */ = {
+		88768BC916D5169200A72EFC /* Falbum3 */ = {
 			isa = PBXGroup;
 			children = (
 				5D4912F21A313E9000FAA80C /* PhotoAlbum.h */,
@@ -114,6 +114,7 @@
 				88768BFE16D9744000A72EFC /* Trucks */,
 				88768BCA16D5169200A72EFC /* Supporting Files */,
 			);
+			name = Falbum3;
 			path = CollectionViewFun;
 			sourceTree = "<group>";
 		};

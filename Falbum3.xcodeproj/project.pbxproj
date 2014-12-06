@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D4912F41A313E9000FAA80C /* PhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4912F31A313E9000FAA80C /* PhotoAlbum.m */; };
+		5DB1457B1A326C560089DB93 /* InputTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1457A1A326C560089DB93 /* InputTableViewController.m */; };
 		88768BC416D5169200A72EFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88768BC316D5169200A72EFC /* UIKit.framework */; };
 		88768BC616D5169200A72EFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88768BC516D5169200A72EFC /* Foundation.framework */; };
 		88768BC816D5169200A72EFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88768BC716D5169200A72EFC /* CoreGraphics.framework */; };
@@ -30,6 +31,8 @@
 /* Begin PBXFileReference section */
 		5D4912F21A313E9000FAA80C /* PhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAlbum.h; sourceTree = "<group>"; };
 		5D4912F31A313E9000FAA80C /* PhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAlbum.m; sourceTree = "<group>"; };
+		5DB145791A326C560089DB93 /* InputTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputTableViewController.h; sourceTree = "<group>"; };
+		5DB1457A1A326C560089DB93 /* InputTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputTableViewController.m; sourceTree = "<group>"; };
 		88768BBF16D5169200A72EFC /* Falbum3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Falbum3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88768BC316D5169200A72EFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88768BC516D5169200A72EFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -100,6 +103,8 @@
 		88768BC916D5169200A72EFC /* Falbum3 */ = {
 			isa = PBXGroup;
 			children = (
+				5DB145791A326C560089DB93 /* InputTableViewController.h */,
+				5DB1457A1A326C560089DB93 /* InputTableViewController.m */,
 				5D4912F21A313E9000FAA80C /* PhotoAlbum.h */,
 				5D4912F31A313E9000FAA80C /* PhotoAlbum.m */,
 				88768BD216D5169200A72EFC /* AppDelegate.h */,
@@ -215,6 +220,7 @@
 			files = (
 				88768BD016D5169200A72EFC /* main.m in Sources */,
 				88768BD416D5169200A72EFC /* AppDelegate.m in Sources */,
+				5DB1457B1A326C560089DB93 /* InputTableViewController.m in Sources */,
 				5D4912F41A313E9000FAA80C /* PhotoAlbum.m in Sources */,
 				88768BE016D5169200A72EFC /* CollectionViewController.m in Sources */,
 				88768BF016D969C000A72EFC /* Cell.m in Sources */,

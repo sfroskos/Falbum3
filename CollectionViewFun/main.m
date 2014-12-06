@@ -1,9 +1,9 @@
 //
 //  main.m
-//  CollectionViewFun
+//  Falbum
 //
-//  Created by joseph hoffman on 2/20/13.
-//  Copyright (c) 2013 Joe Hoffman. All rights reserved.
+//  Created by Seth Roskos on 12/5/2014.
+//  Copyright (c) 2014 Seth Roskos. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -1,9 +1,9 @@
 //
 //  PhotoAlbum.h
-//  CollectionViewFun
+//  Falbum
 //
 //  Created by Seth Roskos on 12/4/14.
-//  Copyright (c) 2014 Joe Hoffman. All rights reserved.
+//  Copyright (c) 2014 Seth Roskos. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

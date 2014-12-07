@@ -7,6 +7,7 @@
 //
 
 #import "InputTableViewController.h"
+#import "CollectionViewController.h"
 
 @interface InputTableViewController ()
 
@@ -61,9 +62,6 @@
 //Returns the highlighted value to the UI
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
 {
-//    NSNumber *numberOfPhotos = [NSNumber numberWithInteger:[self.numberOfPhotosArray objectAtIndex:row]];
-//    NSString *numberOfPhotosString = [numberOfPhotos stringValue];
-//    return numberOfPhotosString;
     return [self.numberOfPhotosArray objectAtIndex:row];
 }
 
@@ -72,8 +70,15 @@
     //NSNumber *numberOfPhotos = [NSNumber numberWithInteger:[self.numberOfPhotosArray objectAtIndex:row]];
     //self.numberOfPhotos = numberOfPhotos;
 //    self.numberOfPhotos = [[self.numberOfPhotosArray objectAtIndex:row] integerValue];
-    self.numberOfPhotos = [self.numberOfPhotosArray[row] integerValue];
-}
+//    self.numberOfPhotos = [self.numberOfPhotosArray[row] integerValue];
+    self.numPhotos = [[self pickerView:_InputNumberOfPhotos titleForRow:[_InputNumberOfPhotos selectedRowInComponent:0] forComponent:0]	integerValue];}
+
+ #pragma mark - Prepare for Segue
+ -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+     CollectionViewController *collectionViewController = (CollectionViewController *)segue.destinationViewController;
+     collectionViewController.numPhotos = self.numPhotos;
+ }
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

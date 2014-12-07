@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  CollectionViewFun
+//  Falbum
 //
 //  Created by Seth Roskos on 12/5/2014.
 //  Copyright (c) 2014 Seth Roskos. All rights reserved.
@@ -10,6 +10,7 @@
 #import "Cell.h"
 #import "ImageDetailViewController.h"
 #import "PhotoAlbum.h"
+#import "InputTableViewController.h"
 
 @interface CollectionViewController ()
 
@@ -32,7 +33,8 @@
 //        self.falbumImages = allMediaImagesArray;
 //        NSLog(@"grabAllMediaCompletionBlock");
 //    }];
-    self.falbumImages = [photoalbum getPhotos];
+    int numPhotos = self.numPhotos;
+    self.falbumImages = [photoalbum getPhotos:5];
 }
 
 - (void)didReceiveMemoryWarning

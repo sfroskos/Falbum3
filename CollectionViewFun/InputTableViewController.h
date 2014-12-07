@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *InputEndDate;
 @property (weak, nonatomic) IBOutlet UIPickerView *InputLocation;
 @property NSArray *numberOfPhotosArray;
-@property NSInteger *numberOfPhotos;
+@property int numPhotos;
 
 - (IBAction)Falbumize:(UIButton *)sender;
 @end

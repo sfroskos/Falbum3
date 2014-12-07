@@ -12,7 +12,7 @@
 
 @interface PhotoAlbum : NSObject
 - (UIImage *)grabImageFromAsset:(PHAsset *)asset;
-- (NSArray *)getPhotos;
+- (NSArray *)getPhotos:(int) numberOfPhotos;
 //- (NSDictionary *)setAlbumCriteria;
 //@property NSMutableDictionary *albumCriteria;
 @end

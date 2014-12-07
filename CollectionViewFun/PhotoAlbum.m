@@ -11,7 +11,7 @@
 @implementation PhotoAlbum
 
 // Get photos from library
-- (NSArray *)getPhotos
+- (NSArray *)getPhotos:(int) numberOfPhotos
 {
     NSDate * enddate = [NSDate date];
     NSDateFormatter *tempFormatter = [[NSDateFormatter alloc]init];
@@ -22,18 +22,23 @@
     options.predicate = [NSPredicate predicateWithFormat:@"creationDate > %@ AND creationDate < %@",startdate,enddate];
     PHFetchResult *fr = [PHAsset fetchAssetsWithOptions:options];
     NSArray* assetsArray = [fr objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, fr.count)]];
+    int numberPhotosFactor = fr.count / numberOfPhotos;
+    int photoFactorCount = 1;
     NSMutableArray *imagesArray = [NSMutableArray new];
         if (assetsArray.count>0) {
             for (int idx=0; idx<assetsArray.count; idx++) {
                 PHAsset *asset = assetsArray[idx];
                 if (asset) {
                     UIImage *assetImage = [self grabImageFromAsset:asset];
-                    if (assetImage != nil) {
+                    if (assetImage != nil & photoFactorCount == numberPhotosFactor) {
                         [imagesArray addObject:assetImage];
+                        photoFactorCount = 1;
+                    }
+                    else
+                    {photoFactorCount++;}
                     }
                 }
             }
-        }
     return imagesArray;
 }
 

@@ -25,6 +25,9 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.numberOfPhotosArray = [[NSArray alloc] initWithObjects:@"5",@"10",@"20",nil];
+    self.locationArray = [[NSArray alloc] initWithObjects:@"NYC",@"LA",nil];
+    _InputNumberOfPhotos.tag = 0;
+    _InputLocation.tag = 1;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,23 +58,29 @@
 // returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
 {
-   return self.numberOfPhotosArray.count;
+    if (pickerView.tag == 0)
+    {return self.numberOfPhotosArray.count;}
+    else {return self.locationArray.count;}
 
 }
 
 //Returns the highlighted value to the UI
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
 {
-    return [self.numberOfPhotosArray objectAtIndex:row];
+    if (pickerView.tag == 0){return [self.numberOfPhotosArray objectAtIndex:row];}
+    else {return [self.locationArray objectAtIndex:row];}
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
 {
-    //NSNumber *numberOfPhotos = [NSNumber numberWithInteger:[self.numberOfPhotosArray objectAtIndex:row]];
-    //self.numberOfPhotos = numberOfPhotos;
-//    self.numberOfPhotos = [[self.numberOfPhotosArray objectAtIndex:row] integerValue];
-//    self.numberOfPhotos = [self.numberOfPhotosArray[row] integerValue];
-    self.numPhotos = [[self pickerView:_InputNumberOfPhotos titleForRow:[_InputNumberOfPhotos selectedRowInComponent:0] forComponent:0]	integerValue];}
+    if (pickerView.tag == 0)
+    {
+        self.numPhotos = [[self pickerView:_InputNumberOfPhotos titleForRow:[_InputNumberOfPhotos selectedRowInComponent:0] forComponent:0]	integerValue];}
+    else {
+        self.location = [self pickerView:_InputLocation titleForRow:[_InputLocation selectedRowInComponent:0] forComponent:0];}
+
+    //    self.numPhotos = [[self pickerView:_InputNumberOfPhotos titleForRow:[_InputNumberOfPhotos selectedRowInComponent:0] forComponent:0]	integerValue];}
+}
 
  #pragma mark - Prepare for Segue
  -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

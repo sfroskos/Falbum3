@@ -34,7 +34,7 @@
 //        NSLog(@"grabAllMediaCompletionBlock");
 //    }];
     int numPhotos = self.numPhotos;
-    self.falbumImages = [photoalbum getPhotos:5];
+    self.falbumImages = [photoalbum getPhotos:numPhotos];
 }
 
 - (void)didReceiveMemoryWarning

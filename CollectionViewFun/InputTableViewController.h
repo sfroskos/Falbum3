@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *InputLocation;
 @property NSArray *numberOfPhotosArray;
 @property int numPhotos;
+@property NSArray *locationArray;
+@property NSString *location;
 
 - (IBAction)Falbumize:(UIButton *)sender;
 @end

@@ -23,6 +23,7 @@
     PHFetchResult *fr = [PHAsset fetchAssetsWithOptions:options];
     NSArray* assetsArray = [fr objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, fr.count)]];
     int numberPhotosFactor = fr.count / numberOfPhotos;
+    if (numberPhotosFactor < 1) {numberPhotosFactor = 1;};
     int photoFactorCount = 1;
     NSMutableArray *imagesArray = [NSMutableArray new];
         if (assetsArray.count>0) {

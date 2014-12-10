@@ -15,6 +15,26 @@
 
 @implementation InputTableViewController
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.view.backgroundColor = [UIColor blueColor];
+    
+//    self.source = [[NSMutableArray alloc] initWithObjects:@"EU", @"USA", @"ASIA", nil];
+    
+/*    UIButton *pressme = [[UIButton alloc] initWithFrame:CGRectMake(20, 20, 280, 80)];
+    [pressme setTitle:@"Press me!!!" forState:UIControlStateNormal];
+    pressme.backgroundColor = [UIColor lightGrayColor];
+    [pressme addTarget:self action:@selector(pressed) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:pressme];
+*/
+    self.InputNumberOfPhotos = [[UIPickerView alloc] initWithFrame:CGRectMake(20, 110, 280, 300)];
+//    self.picker.delegate = self;
+//    self.picker.dataSource = self;
+    [self.view addSubview:self.InputNumberOfPhotos];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -28,6 +48,10 @@
     self.locationArray = [[NSArray alloc] initWithObjects:@"NYC",@"LA",nil];
     _InputNumberOfPhotos.tag = 0;
     _InputLocation.tag = 1;
+    //Set Defaults for Picker Row
+    [self.InputNumberOfPhotos selectRow:0 inComponent:0 animated:YES];
+    [self.InputLocation selectRow:0 inComponent:0 animated:YES];
+    self.numPhotos = 5; // Initialize number of photos in case none is chosen.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,6 +73,71 @@
     return 3;
 }
 
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component;
+{
+    return 70;
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component;
+{
+    return 20;
+}
+
+//Format Date Pickers
+/*-(UIView *)UIDatepicker:(UIDatePicker *)UIDatepicker viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+    {
+        UILabel *lblDate = [[UILabel alloc] init];
+        [lblDate setFont:[UIFont fontWithName:@"Arial" size:25.0]];
+        [lblDate setTextColor:[UIColor whiteColor]];
+        [lblDate setBackgroundColor:[UIColor clearColor]];
+        return lblDate;
+    }
+*/
+//Format UIPickers
+/*-(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+    {
+        UILabel *lblDate = [[UILabel alloc] init];
+        [lblDate setFont:[UIFont fontWithName:@"Arial" size:25.0]];
+        [lblDate setTextColor:[UIColor whiteColor]];
+        [lblDate setBackgroundColor:[UIColor clearColor]];
+        return lblDate;
+    }
+*/
+//-(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+//    {
+//        UILabel *lblDate = [[UILabel alloc] init];
+//        [lblDate setFont:[UIFont fontWithName:@"Arial" size:25.0]];
+//        [lblDate setTextColor:[UIColor whiteColor]];
+//        [lblDate setBackgroundColor:[UIColor clearColor]];
+//        if (component == 0) // Date
+//            {
+//                int n = -INT16_MAX / 2 + row;
+//                NSDate *aDate = [NSDate dateWithTimeIntervalSinceNow:n*24*60*60];
+//                NSDateComponents *components = [self.calendar components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:[NSDate date]];
+//                NSDate *today = [self.calendar dateFromComponents:components];
+//                components = [self.calendar components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:aDate];
+//                NSDate *otherDate = [self.calendar dateFromComponents:components];
+//                if ([today isEqualToDate:otherDate]) { [lblDate setText:@"Today"]; }
+//                else
+//                    {
+//                    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//                    formatter.locale = [NSLocale currentLocale];
+//                    formatter.dateFormat = @"EEE MMM d";
+//                    [lblDate setText:[formatter stringFromDate:aDate]]; }
+//                    lblDate.textAlignment = NSTextAlignmentRight; }
+//                else if (component == 1) // Hour
+//                    {
+//                    int max = (int)[self.calendar maximumRangeOfUnit:NSHourCalendarUnit].length;
+//                    [lblDate setText:[NSString stringWithFormat:@"%02d",(row % max)]]; // 02d = pad with leading zeros to 2 digits
+//                    lblDate.textAlignment = NSTextAlignmentCenter;
+//                    }
+//                else if (component == 2) // Minutes
+//                    {
+//                    int max = (int)[self.calendar maximumRangeOfUnit:NSMinuteCalendarUnit].length;
+//                    [lblDate setText:[NSString stringWithFormat:@"%02d",(row % max)]]; lblDate.textAlignment = NSTextAlignmentLeft; }
+//        return lblDate;
+//            }
+
 // returns the number of 'columns' to display.
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
@@ -61,7 +150,6 @@
     if (pickerView.tag == 0)
     {return self.numberOfPhotosArray.count;}
     else {return self.locationArray.count;}
-
 }
 
 //Returns the highlighted value to the UI

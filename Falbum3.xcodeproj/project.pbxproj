@@ -73,9 +73,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DA8EF661A3A2A0E004EFFC7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		88768BB416D5169200A72EFC = {
 			isa = PBXGroup;
 			children = (
+				5DA8EF661A3A2A0E004EFFC7 /* Resources */,
 				88768BC916D5169200A72EFC /* Falbum3 */,
 				88768BC216D5169200A72EFC /* Frameworks */,
 				88768BC016D5169200A72EFC /* Products */,

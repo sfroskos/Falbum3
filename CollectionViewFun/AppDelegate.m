@@ -1,9 +1,9 @@
 //
 //  AppDelegate.m
-//  CollectionViewFun
+//  Falbum
 //
-//  Created by joseph hoffman on 2/20/13.
-//  Copyright (c) 2013 Joe Hoffman. All rights reserved.
+//  Created by Seth Roskos.
+//  Copyright (c) 2014 Seth Roskos. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -14,8 +14,9 @@
 {
     // Override point for customization after application launch.
     return YES;
+//    self.window.rootViewController = self.viewController;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

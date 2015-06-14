@@ -1,9 +1,9 @@
 //
 //  ImageDetailViewController.m
-//  CollectionViewFun
+//  Falbum3
 //
-//  Created by joseph hoffman on 2/23/13.
-//  Copyright (c) 2013 Joe Hoffman. All rights reserved.
+//  Created by Seth Roskos.
+//  Copyright (c) 2014 Seth Roskos. All rights reserved.
 //
 
 #import "ImageDetailViewController.h"

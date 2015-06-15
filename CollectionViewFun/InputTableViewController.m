@@ -463,20 +463,17 @@ NSUInteger DeviceSystemMajorVersion()
     //Did the user click the cell above an existing picker?
     //BOOL sameCellClicked = (self.pickerIndexPath.row == indexPath.row);
     //Array for current indexpath
-//061415
     //self.indexPathAbove = @[[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
     self.indexPathAbove = [NSIndexPath indexPathForRow:indexPath.row inSection:0];
     self.indexPathBelow = [NSIndexPath indexPathForRow:indexPath.row + 2 inSection:0];
     // If the user clicked the value cell associated with the picker remove the picker
-    if ((self.pickerIndexPath != indexPath)) //Need to add a button to close the uiPicker rather than samecell click
+    if (self.pickerIndexPath == [self.tableView indexPathForSelectedRow]) //Need to add a button to close the uiPicker rather than samecell click
     {
         self.pickerIndexPath = nil;
 //        self.indexPaths = [insertIndexPaths copy];
         self.numRows--;
-        //[self.tableView deleteRowsAtIndexPaths:self.indexPathBelow withRowAnimation:UITableViewRowAnimationFade];
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:self.indexPathBelow] withRowAnimation:UITableViewRowAnimationFade];
         self.numRows--;
-        //[self.tableView deleteRowsAtIndexPaths:self.indexPathAbove withRowAnimation:UITableViewRowAnimationFade];
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:self.indexPathAbove] withRowAnimation:UITableViewRowAnimationFade];
         self.indexPathBelow = self.indexPathAbove = nil;
     }
@@ -484,17 +481,12 @@ NSUInteger DeviceSystemMajorVersion()
     {
         // Remove any other existing pickers
         [self removeAllPickers];
-        self.pickerIndexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:0];
-        self.indexPathAbove = [NSIndexPath indexPathForRow:indexPath.row inSection:0];
-        self.numRows++;
-        //[self.tableView insertRowsAtIndexPaths:self.indexPathAbove withRowAnimation:UITableViewRowAnimationFade];
-        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:self.indexPathAbove] withRowAnimation:UITableViewRowAnimationFade];
-        self.indexPathBelow = [NSIndexPath indexPathForRow:indexPath.row + 2 inSection:0];
-        self.numRows++;
-        //[self.tableView insertRowsAtIndexPaths:self.indexPathBelow withRowAnimation:UITableViewRowAnimationFade];
-        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:self.indexPathBelow] withRowAnimation:UITableViewRowAnimationFade];
-        // add 1 to the current indexpath to get the pickerIndexPath because although we just added 2 rows indexpath has not changed
-        self.pickerIndexPath = [NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0];
+        if (self.pickerIndexPath != nil)
+        {    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:self.pickerIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            self.indexPathAbove = [NSIndexPath indexPathForRow:indexPath.row inSection:0];
+            self.indexPathBelow = [NSIndexPath indexPathForRow:indexPath.row + 2 inSection:0];
+            self.numRows--;
+        }
         // Init the picker view.
         pickerView = [[UIPickerView alloc] init];
         
@@ -510,7 +502,7 @@ NSUInteger DeviceSystemMajorVersion()
         float xPoint = 3*(screenWidth / 4);
         [pickerView setFrame: CGRectMake(xPoint, 0.0f, pickerWidth, 180.0f)];
         
-        // things. First, let the selection indicator to be shown.
+        // First, let the selection indicator to be shown.
         pickerView.showsSelectionIndicator = YES;
         
         // Allow us to pre-select the first option in the pickerView.
@@ -521,22 +513,30 @@ NSUInteger DeviceSystemMajorVersion()
 //        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:YES];
         //UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:self.pickerIndexPath];
         //self.currentCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        self.currentCell.selectionStyle = UITableViewCellSelectionStyleNone;
-        [self.currentCell.contentView addSubview: pickerView];
+        //self.currentCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        [cell addSubview:pickerView];
+        //[self.currentCell.contentView addSubview: pickerView];
+        self.pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 200, 320, 200)];
+//061515 get cell and add picker subview to cell?
+        self.pickerView.delegate = self;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [self.tableView setNeedsDisplay];
-//        [UIView animateWithDuration:1.0f
-//                              delay:0.0f
-//                            options:UIViewAnimationOptionCurveEaseInOut
-//                         animations:^
-//         {
-//             self.pickerView.hidden = NO;
-//             self.pickerView.center = (CGPoint){self.currentCell.frame.size.width/2, self.tableView.frame.origin.y + self.currentCell.frame.size.height*4};
-//         }
-//                         completion:nil];
+        [UIView animateWithDuration:1.0f
+                              delay:0.0f
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^
+         {
+             //self.pickerView.hidden = NO;
+             pickerView.hidden = NO;
+             //self.pickerView.center = (CGPoint){(self.currentCell.frame.size.width/6)*5, self.tableView.frame.origin.y + self.currentCell.frame.size.height*.2};
+             //self.pickerView.center = (CGPoint){(self.currentCell.frame.size.width/6)*5};
+             
+         }
+                         completion:nil];
 
         // always deselect the row containing the selected picker value
-        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+        //[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 
         // inform UIPickerView of the current value to match the current cell
         //[self updatepicker];
